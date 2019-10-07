@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        .rotateimg180 {
+            -webkit-transform:rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+h1 { text-align: center;
+size: 2000px;
+
+
+
+}
+h2 {
+    text-align: center;
+
+
+
+}
+body {
+    background-image: url("Backgroundd_copy.jpg") 
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+  }
+
+
+        
+        </style>
+   
+    </head>
+    <body>
+            <h1 style="color:rgb(255, 255, 255);">Animals I Actually Know
+    
+</h1>
+<h2 style="color:rgb(255, 255, 255);">
+        (This one's for you Mom and Dad)
+
+
+
+</h2>
+
+        
+    <div id="slideshow">
+        <img src="Bella.jpg" alt="Bella" width="1000" height="800" />
+        <img src="Bob.jpg"alt="Bob" width="1000" height="800" />
+        <img src="Fluffy & Sock.jpg" alt="Fluffy&Sock" width="1000" height="800" />
+        <img src="Frances.jpg" alt="Frances" width="1000" height="800" class="rotateimg180" />
+        <img src="Gidget & Bentley.jpg" alt="Gidget&Bentley" width="1000" height="800" />
+        <img src="Loki.jpg" alt="Loki" width="1000" height="800" />
+        <img src="Luna.jpg" alt="Luna" width="1000" height="800" />
+        <img src="Piper.jpg" alt="Piper" width="1000" height="800" />
+        <img src="There.jpg" alt="There" width="1000" height="800" />
+        
+    </div>
+
+    <script>
+var slideShow = function(container) {
+    this.images = [];
+    this.curImage = 0;
+    for (i = 0; i < container.childElementCount; i++) {
+        this.images.push(container.children[i]);
+        this.images[i].style.display = "none";
+    }
+    
+    // Handle going to to the next slide
+    var nextSlide = function() {
+        for (var i = 0; i < this.images.length; i++) {
+            this.images[i].style.display = "none";
+        }
+        this.images[this.curImage].style.display = "block";
+        this.curImage++;
+        if (this.curImage >= this.images.length) {
+            this.curImage = 0;
+        }
+        window.setTimeout(nextSlide.bind(this), 1000);
+    };
+    
+    nextSlide.call(this);
+};
+slideShow(document.getElementById("slideshow"));
+    </script>
+    </body>
+</html>
